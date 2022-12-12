@@ -16,29 +16,29 @@ int main()
 	std::vector<int> numbers;
 	std::vector<int> count;
 
-	auto current = vvod[0];
-	auto total = 0;
+	auto element = vvod[0];
+	auto schet = 0;
 
 	numbers.push_back(current);
 	count.push_back(0);
 
 	for (auto n : vvod)
 	{
-		if (n == current)
+		if (n == element)
 		{
-			++count[total];
+			++count[schet];
 		}
 
-		if (n != current)
+		if (n != element)
 		{
 			numbers.push_back(n);
-			current = n;
+			element = n;
 			count.push_back(1);
-			++total;
+			++schet;
 		}
 	}
 	std::cout << "Number + how often? " << std::endl;
-	for (auto i = 0; i < total + 1; ++i)
+	for (auto i = 0; i < schet + 1; ++i)
 	{
 		std::cout << numbers[i] << ' ' << count[i] << std::endl;
 	}
